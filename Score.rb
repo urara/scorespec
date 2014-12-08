@@ -16,7 +16,15 @@ class Score
   end
 
   def get_ave
-    5.5
+    get_sum / @number_list.size.to_f
   end
 
+  def get_multi_array (num)
+    if num > 0 then
+      number_list = get_number_list
+      number_list.map{|i| i * num}
+    else
+      raise ArgumentError
+    end
+  end
 end
